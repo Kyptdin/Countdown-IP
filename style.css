@@ -1,5 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Noto+Sans:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
-h1 {
-  font-family: "Noto Sans", sans-serif;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #444;
+  background-color: #fdfdfd;
+  height: 100vh;
 }
