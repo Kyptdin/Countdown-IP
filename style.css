@@ -10,8 +10,49 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Sofia Sans", sans-serif;
   color: #444;
   background-color: #fdfdfd;
   height: 100vh;
+}
+
+.heading-primary {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.count-down-clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #f3f3f3;
+  padding: 2.5rem 10rem;
+}
+
+.count-down-clock-point {
+  font-size: 7rem;
+}
+
+.count-down-number {
+  font-size: 20rem;
+}
+
+.count-down-clock-item {
+  position: relative;
+}
+
+.count-down-desc {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 80%;
 }
