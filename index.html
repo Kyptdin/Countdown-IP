@@ -48,7 +48,35 @@
     </div>
 
     <!-- THE DATE FORM -->
-    <form></form>
+    <form class="count-down-form">
+      <div class="input-desc">Enter date</div>
+      <input
+        type="text"
+        minlength="2"
+        class="countdown-form-input countdown-form-input--month"
+        placeholder="mm"
+      />
+      <div class="slash">/</div>
+      <input
+        type="text"
+        minlength="2"
+        class="countdown-form-input countdown-form-input--days"
+        placeholder="dd"
+      />
+      <div class="slash">/</div>
+      <input
+        type="text"
+        minlength="2"
+        class="countdown-form-input countdown-form-input--years"
+        placeholder="yyyy"
+      />
+      <div class="break"></div>
+    </form>
+
+    <div class="flex-center-all">
+      <button class="btn">Create Countdown</button>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

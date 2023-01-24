@@ -16,6 +16,12 @@ body {
   height: 100vh;
 }
 
+.flex-center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .heading-primary {
   font-size: 3rem;
   text-align: center;
@@ -34,6 +40,7 @@ body {
   gap: 1.5rem;
   background-color: #f3f3f3;
   padding: 2.5rem 10rem;
+  margin-bottom: 4rem;
 }
 
 .count-down-clock-point {
@@ -55,4 +62,43 @@ body {
   width: 100%;
   text-align: center;
   top: 80%;
+}
+
+/* Count down form  */
+
+.count-down-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.input-desc,
+.slash {
+  font-size: 2rem;
+}
+
+.countdown-form-input {
+  font-family: inherit;
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
+  width: 10rem;
+}
+
+.slash {
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  font-family: inherit;
+  padding: 2rem 4rem;
+  font-size: 2rem;
+  border: none;
+  color: white;
+  background-color: #9be15d;
+  cursor: pointer;
 }
