@@ -50,32 +50,13 @@
     <!-- THE DATE FORM -->
     <form class="count-down-form">
       <div class="input-desc">Enter date</div>
-      <input
-        type="text"
-        minlength="2"
-        class="countdown-form-input countdown-form-input--months"
-        placeholder="mm"
-      />
-      <div class="slash">/</div>
-      <input
-        type="text"
-        minlength="2"
-        class="countdown-form-input countdown-form-input--days"
-        placeholder="dd"
-      />
-      <div class="slash">/</div>
-      <input
-        type="text"
-        minlength="2"
-        class="countdown-form-input countdown-form-input--years"
-        placeholder="yyyy"
-      />
-      <div class="break"></div>
-    </form>
+      <!-- The date element -->
+      <input type="date" min="2023-1-27" step="1" class="date-input" required />
 
-    <div class="flex-center-all">
-      <button class="btn">Create Countdown</button>
-    </div>
+      <div class="flex-center-all">
+        <button class="btn">Create Countdown</button>
+      </div>
+    </form>
 
     <script src="script.js"></script>
   </body>
