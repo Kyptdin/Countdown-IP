@@ -27,14 +27,38 @@ const setMinDate = function (d) {
 
 // How to get the goal date from input
 const getGoalDate = function () {
-  const input = String(dateInput.value);
-  const [year, month, day] = input.split("-");
-  return `${year}-${month}-${day}`;
+  const [year, month, day] = String(dateInput.value).split("-");
+  const formatedDay = String(Number(day.trimStart("0")));
+  return `${year}-${month}-${formatedDay}`;
 };
 
-const convertMili = function (t) {
+const calcTime = function (t) {
   let timeLeftClone = t;
-  // Similar to the timer
+  let days = Math.floor(timeLeftClone / 86400000);
+  timeLeftClone -= days * 86400000;
+  let hours = Math.floor(timeLeftClone / 3600000);
+  timeLeftClone -= hours * 3600000;
+  let minutes = Math.floor(timeLeftClone / 60000);
+  timeLeftClone -= minutes * 60000;
+  let seconds = Math.floor(timeLeftClone / 1000);
+  const timeSec = [days, hours, minutes, seconds];
+  return timeSec;
+};
+
+const displayTime = function (a) {
+  const timeSec = a;
+  const days = a[0];
+  const hours = a[1];
+  const minutes = a[2];
+  const seconds = a[3];
+  daysDisplayEl.textContent = `${days}`;
+  hoursDisplayEl.textContent = `${hours}`.padStart(2, "0");
+  minutesDispalyEl.textContent = `${minutes}`.padStart(2, "0");
+  secondsDisplayEl.textContent = `${seconds}`.padStart(2, "0");
+};
+
+const calcDisplayTime = function (t) {
+  displayTime(calcTime(t));
 };
 
 //Once the user logs in the min date is set
@@ -42,11 +66,17 @@ setMinDate(determineMinDate());
 
 startCountdownBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  const goalDate = new Date(getGoalDate());
-  const countDown = setInterval(function () {
-    //Goal date - Date.now() is the miliseconds that have passed since you clicked
-    const timeLeft = goalDate - Date.now();
-    //format the milliseconds to days hours minutes seconds
-    //Get the formatted day, hours, minutes seconds to change the elements
+  getGoalDate();
+  const goalDate = new Date(Date.parse(getGoalDate()));
+  console.log(goalDate.getDate());
+  goalDate.setHours(23);
+  goalDate.setMinutes(59);
+  goalDate.setSeconds(59);
+  goalDate.setMilliseconds(999);
+
+  let countDown = setInterval(function () {
+    let nowDate = new Date();
+    let timeLeft = goalDate - nowDate;
+    calcDisplayTime(timeLeft);
   }, 1000);
 });
