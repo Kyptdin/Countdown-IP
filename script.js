@@ -67,16 +67,16 @@ setMinDate(determineMinDate());
 startCountdownBtn.addEventListener("click", function (e) {
   e.preventDefault();
   getGoalDate();
-  const goalDate = new Date(Date.parse(getGoalDate()));
-  console.log(goalDate.getDate());
+  const goalDate = new Date(getGoalDate());
   goalDate.setHours(23);
   goalDate.setMinutes(59);
   goalDate.setSeconds(59);
   goalDate.setMilliseconds(999);
+  const adjustedDate = goalDate - 86_400_000;
 
   let countDown = setInterval(function () {
     let nowDate = new Date();
-    let timeLeft = goalDate - nowDate;
+    let timeLeft = adjustedDate - nowDate;
     calcDisplayTime(timeLeft);
   }, 1000);
 });
